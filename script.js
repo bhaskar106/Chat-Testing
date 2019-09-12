@@ -1,11 +1,15 @@
-const socket = io('http://localhost:106')
-const messageContainer = document.getElementById('message-container')
-const messageForm = document.getElementById('send-container')
-const messageInput = document.getElementById('message-input')
+var socket = io('http://localhost:106')
+var messageContainer = document.getElementById('message-container')
+var messageForm = document.getElementById('send-container')
+var messageInput = document.getElementById('message-input')
+var nameerror = document.getElementById('name-error')
+var setname = doccument.getElementById('set-name')
+var username = document.getElementById('user-name')
 
-const name = prompt('What is your name?')
+
 appendMessage('You joined')
 socket.emit('new-user', name)
+
 
 socket.on('chat-message', data => {
   appendMessage(`${data.name}: ${data.message}`)
@@ -22,7 +26,7 @@ socket.on('user-disconnected', name => {
 messageForm.addEventListener('submit', e => {
   e.preventDefault()
   const message = messageInput.value
-  appendMessage(`You: ${message}`)
+  appendMessage(`${message}`)
   socket.emit('send-chat-message', message)
   messageInput.value = ''
 })

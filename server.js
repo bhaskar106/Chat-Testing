@@ -1,21 +1,27 @@
 var http = require('http')
 var fs = require('fs')
 var io = require('socket.io')(app)
-var app=http.createServer(function(req,res){
+var app = http.createServer(function(req,res){
   fs.readFile('Chat.html',function(err,data){
     res.writeHead(200,{'Content-Type': 'text/html'})
     res.write(data)
     res.end()
   })
-}).listen(106)
+})
+app.listen(106)
 
 var users = []
-console.log(socket.emit(users))
 
 io.on('connection', socket => {
-  socket.on('new-user', name => {
-    users[socket.id] = name
-    socket.broadcast.emit('user-connected', name)
+  socket.on('new-user', function (name , callback) {
+    if(name.indexOf(name)!=-1){
+      callback(false);
+    }
+    else{
+      socket.users=name
+      users.push(socket.users)
+      io.sockets.emit('user-connected',users)
+    }
   })
   socket.on('send-chat-message', message => {
     socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] })
