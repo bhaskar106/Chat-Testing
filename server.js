@@ -27,7 +27,10 @@ io.sockets.on('connection', socket => {
       socket.emit('Allusers',users);
       console.log(Object.keys(users));
       console.log(Object.values(users));
-      clients = Object.keys(users);
+      console.log(users);
+      console.log(clients);
+      clients = Object(users);
+      console.log(Object(clients));
       socket.emit('clients', Object.values(users));
       socket.broadcast.emit('user-connected', name);
   })
@@ -36,7 +39,7 @@ io.sockets.on('connection', socket => {
   socket.on('send-chat-message', message => {
     console.log('sending message');
     socket.broadcast.emit('chat-message', { message:message, name: users[socket.id] });
-   socket.broadcast.to(users[socket.id]).emit('message',{ message:message, name: users[socket.id] });
+   /*socket.broadcast.to(users[socket.id]).emit('message',{ message:message, name: users[socket.id] });*/
   });
 
 

@@ -63,11 +63,12 @@
 
             .rightside {
               height: 100%;
-              width: 350px;
+              width: 300px;
               position: fixed;
               top: 0;
               right: 0;
-              background-color: #ffffff;
+              /*background-color: #ffffff;*/
+              background-image: linear-gradient(white,yellow,cyan);
               display: table-row;
               border: 2px solid rgb(134, 134, 134);
               border-radius: 10px;
@@ -92,11 +93,12 @@
 
             .leftside {
               height: 100%;
-              width: 350px;
+              width: 300px;
               position: fixed;
               top: 0;
               left: 0;
-              background-color: #ffffff;
+              /*background-color: #ffffff;*/
+              background-image: linear-gradient(white,yellow,cyan);
               display: table-row-group;
               border: 2px solid rgb(134, 134, 134);
               border-radius: 10px;
@@ -243,26 +245,24 @@
 
       messageForm.addEventListener('submit', e => {
       e.preventDefault()
-      name = nameInput.value
+      const name = nameInput.value
       const message = messageInput.value
       printChat(`To: ${name} message: ${message}`)
       socket.emit('send-chat-message', message )
       nameInput.value = ''
       messageInput.value = ''
-
-      //if(nameInput.value == null || nameInput.value == ''){
       socket.on('chat-message', data => {
         console.log('working3')
         printChat(`${data.name}: ${data.message}`)
       })
-     // }
-     // else {
+      })
+     /*if(nameInput.value == null || nameInput.value == ''){}
+     else {
       socket.on('message', data => {
         console.log('working4')
         printChat(`${data.name}: ${data.message}`)
       })
-     // }
-      })
+      }*/   
       function appendMessage(message) {
       const messageElement = document.createElement('div')
       messageElement.innerText = message
@@ -280,12 +280,9 @@
       chatmessage.innerText = content
       chatMessage.append(chatmessage)
       }
-
-
     }
 
 
-    
 
  /*   var myobject = {
     ValueA : io.sockets
