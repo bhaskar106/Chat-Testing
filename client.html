@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -20,37 +20,87 @@
             position: center;
             bottom: 0;
             }
+            .button:hover, .button:focus {
+            background-color: #3e8e41;
+            }
             input[type=submit]{
             cursor: pointer;
             border: 2px solid rgb(185, 185, 185);
             border-radius: 10px;
             }
             #send-container {
-             position: fixed;
-             bottom: 0;
-             background-color: white;
-             display: flex;
-             left: 50%;
+            position: fixed;
+            overflow: auto;
+            bottom: 0;
+            background-color: white;
+            display: flex;
+            left: 50%;
             -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
+            } 
+  
+            /*#name-input {
+            background-image: url('searchicon.png');
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px ;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 10px;
             }
+
+            #name-input:focus {outline: 2px solid #ddd;}
+
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            border-radius: 10px;
+            min-width: 200px;
+            overflow: auto;
+            border: 3px solid #ddd;
+            z-index: 1;
+            }
+
+            .dropdown-content a {
+            color: black;
+            padding: 10px 12px;
+            text-decoration: none;
+            display: block;
+            }
+
+            .dropbtn {
+            background-color: #90EE90;
+            color: black;
+            padding: 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 3px solid #ddd;
+            }
+
+            .dropbtn:hover, .dropbtn:focus {
+            background-color: #3e8e41;
+            }
+            .dropdown a:hover {background-color: #ddd;}*/
+
             #myHeader {
-              color: black;
-              text-align: center;
+            color: black;
+            text-align: center;
             }
             
             header {
-              /*background-color:aqua;*/
-              background-image: linear-gradient(cyan,white);
-              padding: 30px;
-              top:0;
-              text-align: center;
-              text-emphasis-color: black;
-              font-size : 30px;
-              color: white;
+            /*background-color:aqua;*/
+            background-image: linear-gradient(cyan,white);
+            padding: 30px;
+            top:0;
+            text-align: center;
+            text-emphasis-color: black;
+            font-size : 30px;
+            color: white;
             }
             
-            #myInput {
+            /*#myInput {
               background-position: 10px;
               background-repeat: no-repeat;
               width: 10%;
@@ -58,97 +108,94 @@
               padding: 12px 20px 12px;
               border: 2px solid rgb(185, 185, 185);
               margin-bottom: 12px;
-            }
+            }*/
 
 
             .rightside {
-              height: 100%;
-              width: 300px;
-              position: fixed;
-              top: 0;
-              right: 0;
-              /*background-color: #ffffff;*/
-              background-image: linear-gradient(white,yellow,cyan);
-              display: table-row;
-              border: 2px solid rgb(134, 134, 134);
-              border-radius: 10px;
-              overflow-x: hidden;
-              padding-top: 20px;
-              text-align: center;
-              resize: both;
-              overflow: auto;
+            height: 97%;
+            width: 300px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            /*background-color: #ffffff;*/
+            background-image: linear-gradient(#ffc4c4,yellow,cyan);
+            display: table-row;
+            border: 2px solid rgb(134, 134, 134);
+            border-radius: 10px;
+            overflow-x: hidden;
+            padding-top: 20px;
+            text-align: center;
+            resize: both;
             }
 
             .rightside a {
-              padding: 6px 8px 6px 16px;
-              text-decoration: none;
-              font-size: 25px;
-              color: #ffffff;
-              display: block;
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #ffffff;
+            display: block;
             }
 
             .rightside a:hover {
-              color: hsl(180, 100%, 80%);
+            background-color: hsl(180, 100%, 80%);
             }
 
             .leftside {
-              height: 100%;
-              width: 300px;
-              position: fixed;
-              top: 0;
-              left: 0;
-              /*background-color: #ffffff;*/
-              background-image: linear-gradient(white,yellow,cyan);
-              display: table-row-group;
-              border: 2px solid rgb(134, 134, 134);
-              border-radius: 10px;
-              overflow-x: hidden;
-              padding-top: 20px;
-              text-align: center;
-              resize: both;
-              overflow: auto;
+            height: 97%;
+            width: 300px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /*background-color: #ffffff;*/
+            background-image: linear-gradient(#ffc4c4,yellow,cyan);
+            display: table-row-group;
+            border: 2px solid rgb(134, 134, 134);
+            border-radius: 10px;
+            overflow-x: hidden;
+            padding-top: 20px;
+            text-align: center;
+            resize: both;
             }
 
             .leftside a {
-              padding: 6px 8px 6px 16px;
-              text-decoration: none;
-              font-size: 25px;
-              color: #ffffff;
-              display: block;
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #ffffff;
+            display: block;
             }
 
             .leftside a:hover {
-             color: hsl(180, 100%, 80%);
+            background-color: hsl(180, 100%, 80%);
             }
 
 
             .Middle {
-              height: 70%;
-              width: 500px;
-              position: fixed;
-              background-color: #ffffff;
-              border: 2px solid rgb(134, 134, 134);
-              border-radius: 10px;
-              padding-top: 20px;
-              text-align: center;
-              resize: both;
-              overflow: auto;
-              left : 50%;
-              bottom: 0;
-              -ms-transform: translate(0%,0%);
-                  transform: translate(-50%, 0%);
+            height: 70%;
+            width: 500px;
+            position: fixed;
+            background-color: #ffffff;
+            border: 2px solid rgb(134, 134, 134);
+            border-radius: 10px;
+            padding-top: 20px;
+            text-align: center;
+            resize: both;
+            left: 50%;
+            bottom: 0;
+            -ms-transform: translate(0%,0%);
+                transform: translate(-50%, 0%);
             }
 
             .Middle a {
-              padding: 6px 8px 6px 16px;
-              text-decoration: none;
-              font-size: 25px;
-              color: #ffffff;
-              display: block;
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #ffffff;
+            display: block;
             }
 
             .Middle a:hover {
-             color: hsl(180, 100%, 80%);
+            background-color: hsl(180, 100%, 80%);
             }
             
             
@@ -163,23 +210,26 @@
 
         <div class="rightside" id="message-container">
           <h2>Connections</h2>
-          </div> 
+        </div> 
 
 
         <div class="Middle" id="messages">
           <h2>Chat Messages</h2>
-          <form id="send-container">
-              <input type="text" id="name-input">
-              <input type="text" id="message-input">
-              <button type="submit" id="send-button">Send</button>
-            </form>
+         <form id="send-container"> 
+          
+            <select name="clients">
+              <option value="1">All</option>
+            </select>
+
+          <input type="text" id="message-input">
+          <button type="submit" id="send-button">Send</button>
+         </form>
         </div>
-           
         
 
-          <div class="leftside" id="name-container" >
-              <h2>List of users</h2>
-            </div>
+        <div class="leftside" id="name-container" >
+          <h2>List of users</h2>
+        </div>
 </body>
 
 <script>
@@ -193,32 +243,38 @@
     var chatMessage = document.getElementById('messages')
     var name = prompt("Enter your name:")
     if(name == null || name == ""){
-        console.log('working1')
+        console.log('empty name is working')
         alert("Please enter a different user name");
     }
     else{
-        console.log('working2')
+        console.log('name is working')
         appendMessage('You joined');
         socket.emit('new-user' , name )
       
 
       socket.on('username', name => {
-        console.log('working name')
+        console.log('name receive from server working')
         printMessage(`${name}`)
       })
 
       socket.on('id', data => {
-        console.log('working id')
+        console.log('id receive from server working')
         appendMessage(`Your Id :${data}`)
       })
       
       socket.on('Allusers', clients => {
-        console.log('UsersList')
+        console.log('All users that are connected to the localhost')
         /*for(i=o,i<=id,i++)
         {
          console.log(users[socket.id]);
         }*/
         console.log(clients)
+      })
+
+
+      socket.on('chat-message', data => {
+        console.log('message received from server')
+        printChat(`${data.name}: ${data.message}`)
       })
       
       socket.on('clients', client=> {
@@ -234,27 +290,21 @@
       })
 
       socket.on('user-connected', name => {
-        console.log('working5')
+        console.log('user connected from server')
         appendMessage(`${name} connected`)
       })
 
       socket.on('user-disconnected', data => {
-        console.log('working6')
+        console.log('user disconnected from the server')
         appendMessage(`${data} disconnected`)
       })
 
       messageForm.addEventListener('submit', e => {
       e.preventDefault()
-      const name = nameInput.value
       const message = messageInput.value
       printChat(`To: ${name} message: ${message}`)
       socket.emit('send-chat-message', message )
-      nameInput.value = ''
       messageInput.value = ''
-      socket.on('chat-message', data => {
-        console.log('working3')
-        printChat(`${data.name}: ${data.message}`)
-      })
       })
      /*if(nameInput.value == null || nameInput.value == ''){}
      else {
@@ -262,7 +312,9 @@
         console.log('working4')
         printChat(`${data.name}: ${data.message}`)
       })
-      }*/   
+      }*/
+
+   
       function appendMessage(message) {
       const messageElement = document.createElement('div')
       messageElement.innerText = message
@@ -291,7 +343,49 @@
 var select = document.getElementById("username");
 for(index in myobject) {
     select.options[select.options.length] = new Option(myobject[index], index);
-}*/
+
+}
+
+
+<div class="dropdown">
+              <button type="dropdown" onclick="myFunction()" class="dropbtn">Chat users</button>
+              <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="name-input"
+              onkeyup="filterFunction()">
+              <a href="#about">All</a>
+              <a href="#about">About</a>
+    <a href="#base">Base</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#custom">Custom</a>
+    <a href="#support">Support</a>
+    <a href="#tools">Tools</a>
+            </div>
+            </div>
+        </div>
+*/
+
+
+     function myFunction() {
+       document.getElementById("myDropdown").classList.toggle("show");
+     }
+
+     function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("name-input");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+     for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+     } else {
+      a[i].style.display = "none";
+       }
+     }
+     }
+
 
 </script>
 
