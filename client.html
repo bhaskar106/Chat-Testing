@@ -20,9 +20,6 @@
             position: center;
             bottom: 0;
             }
-            .button:hover, .button:focus {
-            background-color: #3e8e41;
-            }
             input[type=submit]{
             cursor: pointer;
             border: 2px solid rgb(185, 185, 185);
@@ -161,9 +158,10 @@
         <div class="Middle" id="messages">
           <h2>Chat Messages</h2>
          <form id="send-container"> 
-          
-            <select name="clients">
-              <option value="1">All</option>
+          <button type="button" onclick="myFunction()">update new users</button>
+            <select id="mySelect" name="clients">
+              <option>All</option> 
+              <option id="connectedclients"  >select</option>
             </select>
 
           <input type="text" id="message-input">
@@ -186,6 +184,8 @@
     var messageInput = document.getElementById('message-input')
     var namecontainer = document.getElementById('name-container')
     var chatMessage = document.getElementById('messages')
+    var users=[];
+    var names;
     var name = prompt("Enter your name:")
     if(name == null || name == ""){
         console.log('empty name is working')
@@ -200,6 +200,7 @@
       socket.on('username', name => {
         console.log('name receive from server working')
         printMessage(`${name}`)
+        names = (`${name}`)
       })
 
       socket.on('id', data => {
@@ -207,10 +208,10 @@
         appendMessage(`Your Id :${data}`)
       })
       
-      socket.on('Allusers', clients => {
+      /*socket.on('Allusers', clients => {
         console.log('All users that are connected to the localhost')
         console.log(clients)
-      })
+      })*/
 
 
       socket.on('chat-message', data => {
@@ -219,9 +220,13 @@
       })
       
       socket.on('clients', client=> {
+        for(i=0;i<=`${client}`.length;i++)
+       {
         console.log('client names')
         console.log(`${client}`.length)
         printMessage(`${client}`)
+        users=[`${client}`]
+       }
       })
 
       socket.on('user-connected', name => {
@@ -261,8 +266,21 @@
       }
     }
 
+    function myFunction() {
+      var x = document.getElementById("mySelect");
+      var option = document.createElement("option"); 
+      option.text = (users);
+      console.log(users);
+      x.add(option);
+       for (var i in users) 
+       {
+         console.log("row" + i);
+         console.log(" " + users[i]);
+       }
+    }
 
- /*   var myobject = {
+
+/*   var myobject = {
     ValueA : io.sockets
 };
 var select = document.getElementById("username");
