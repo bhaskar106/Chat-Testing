@@ -13,22 +13,18 @@ http.listen(106, () =>{
 })
 
 var users = {};
-var clients = [];
 
 io.sockets.on('connection', socket => {
   console.log('connected');
   socket.on('new-user', name => {
     console.log('new user');
-      //users[socket.id] = name;
       users[socket.id] = name;
-      //clients[id]=users;
       io.sockets.emit('username',name);
       socket.emit('id',socket.id);
       socket.emit('Allusers',users);
       console.log(Object.keys(users));
       console.log(Object.values(users));
       console.log(users);
-      console.log(clients);
       clients = Object(users);
       console.log(Object(clients));
       socket.emit('clients', Object.values(users));
