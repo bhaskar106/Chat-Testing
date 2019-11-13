@@ -12,7 +12,18 @@ http.listen(106, () =>{
   console.log('Server is started')
 })
 
-var users = {};
+var users = [];
+var a=1;
+var b="string";
+//var c={a=1};
+//var d={{a,b},{c,d}};
+//var e={{a=1},{b="string"},{c={a=1}},{d={{a,b},{c,d}}};
+//var f=[1,2,3,4];
+//var g=["hi","how","are","you"];
+//var h=[{a=1},{b=2},{c=3}];
+//var i=[{a=1},{b="string"},{c={a=1}},{d={{a,b},{c,d}}]
+//var j=[[1,2,3,4],["hi","how","are","you"]];
+
 
 io.sockets.on('connection', socket => {
   console.log('connected');
@@ -29,6 +40,8 @@ io.sockets.on('connection', socket => {
       console.log(Object(clients));
       socket.emit('clients', Object.values(users));
       socket.broadcast.emit('user-connected', name);
+
+
   })
 
 

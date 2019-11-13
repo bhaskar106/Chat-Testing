@@ -220,13 +220,14 @@
       })
       
       socket.on('clients', client=> {
-        for(i=0;i<=`${client}`.length;i++)
-       {
+        //for(i=0;i<=`${client}`.length;i++)
+       //{
         console.log('client names')
         console.log(`${client}`.length)
         printMessage(`${client}`)
-        users=[`${client}`]
-       }
+        users = `${client}`.split(",")
+       // users.push[`${client}`]
+       //}
       })
 
       socket.on('user-connected', name => {
@@ -268,17 +269,25 @@
 
     function myFunction() {
       var x = document.getElementById("mySelect");
-      var option = document.createElement("option"); 
-      option.text = (users);
+      var option = document.createElement("option");
+      var options = `${users}`.split(",")
+      var a=[];
+      for(i=0;i<=5;i++)
+      {
+      a=options[i];
+      }
+      option.text = a;
+      console.log(option.text);
+      console.log(a);
       console.log(users);
       x.add(option);
        for (var i in users) 
        {
          console.log("row" + i);
          console.log(" " + users[i]);
+         //option.text = ( users[i]);
        }
     }
-
 
 /*   var myobject = {
     ValueA : io.sockets
