@@ -266,10 +266,17 @@
       e.preventDefault()
       const message = messageInput.value
       const Select = mySelect.value
+      if(message == null || message == undefined || message.length == 0)
+      {
+      	console.log("if empty");
+	alert("Message is empty , Please send a valid message");
+      }
+      else{
       printChat(`To: ${Select} message: ${message}`)
       socket.emit('username', { Select:Select , message:message })
       messageInput.value = ''
-      //mySelect.value = 'All'
+      //mySelect.value = 'All'  
+      }
       })
       
       function appendMessage(message) {

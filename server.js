@@ -68,9 +68,6 @@ io.sockets.on('connection', socket => {
       }
    })
 
-   
-
-
   socket.on('username', Value => {
     var V=Object.values(users);
     var K=Object.keys(users);
@@ -82,9 +79,9 @@ io.sockets.on('connection', socket => {
     time = d.substring(11,19);
     var name= users[socket.id];
     var Value = [
-          [name,date,time,M,N]
+          [name,d,M,N]
        ];
-      connection.query("INSERT INTO Mdata(UserName,Date,Time,Message,ToUser) VALUES ?", [Value] , function (err, result, fields) {
+      connection.query("INSERT INTO Mdata(UserName,Date,Message,ToUser) VALUES ?", [Value] , function (err, result, fields) {
         if (err) throw err;
        console.log(result);
        });
@@ -92,7 +89,8 @@ io.sockets.on('connection', socket => {
     console.log(N);
     console.log(V.indexOf(N));
     console.log(K[V.indexOf(N)]);
-    console.log('entered option value') 
+    console.log('entered option value')
+    console.log(M); 
      if(V.indexOf(N) != -1)
      {
       console.log("entered if condition")
